@@ -4,6 +4,25 @@ Micropay is a microservice that lists payment methods given an user and a restau
 
 ## API
 
+### Restaurant Listing
+```bash
+GET /micropay/api/restaurant
+```
+
+```json
+[
+    {
+        "id": 1,
+        "name": "R01"
+    },
+    {
+        "id": 2,
+        "name": "Pf Chang's"
+    }
+]
+```
+
+### Payment Method Listing
 ```bash
 GET /micropay/api/restaurant/<id>/paymentMethods?userId=<id>
 ```

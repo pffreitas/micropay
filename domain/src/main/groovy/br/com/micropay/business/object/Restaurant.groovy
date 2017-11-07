@@ -8,4 +8,6 @@ class Restaurant {
     Long id
 
     String name
+
+    List<PaymentMethod> paymentMethods
 }

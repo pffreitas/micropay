@@ -16,7 +16,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @RunWith(SpringRunner)
 @SpringBootTest(classes = Application)
 @AutoConfigureMockMvc
-class PaymentMethodListTest {
+class RestaurantEndpointsTest {
 
     @Autowired
     private MockMvc mvc
@@ -77,6 +77,30 @@ class PaymentMethodListTest {
     }
 
     @Test
+    void testListGoodDinosaurOnPfChangs() {
+        mvc.perform(get("/api/restaurant/2/paymentMethods?userId=2"))
+                .andExpect(status().isOk())
+                .andExpect(content().json("""
+                [
+                  {
+                    "id": 1,
+                    "description": "Cash",
+                    "type": "Cash"
+                  },{
+                    "id": 4,
+                    "description": "Mastercard",
+                    "type": "Online"
+                  },
+                  {
+                    "id": 5,
+                    "description": "Visa",
+                    "type": "Online"
+                  }
+                ]
+                """))
+    }
+
+    @Test
     void testListInvalidRestaurant() {
         mvc.perform(get("/api/restaurant/223/paymentMethods?userId=1"))
                 .andExpect(status().isNotFound())
@@ -88,5 +112,24 @@ class PaymentMethodListTest {
         mvc.perform(get("/api/restaurant/1/paymentMethods?userId=123"))
                 .andExpect(status().isBadRequest())
                 .andExpect(content().json('{"error": "Invalid user"}'))
+    }
+
+
+    @Test
+    void testListRestaurants() {
+        mvc.perform(get("/api/restaurant"))
+                .andExpect(status().isOk())
+                .andExpect(content().json("""
+                    [
+                        {
+                            "id": 1,
+                            "name": "R01"
+                        },
+                        {
+                            "id": 2,
+                            "name": "Pf Chang's"
+                        }
+                    ]
+                """))
     }
 }

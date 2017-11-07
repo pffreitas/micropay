@@ -5,4 +5,6 @@ import br.com.micropay.business.object.Restaurant
 interface IRestaurantRepository {
 
     Restaurant findById(Long id)
+
+    List<Restaurant> findAll()
 }

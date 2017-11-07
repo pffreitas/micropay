@@ -18,12 +18,12 @@ class CachedPaymentConfiguration {
         this.cache = cache
     }
 
-    void updatePaymentConfiguration(PaymentConfiguration paymentConfiguration){
+    final void updatePaymentConfiguration(PaymentConfiguration paymentConfiguration){
         def key = getKey(paymentConfiguration.restaurant, paymentConfiguration.user)
         cache.put(key, paymentConfiguration)
     }
 
-    PaymentConfiguration getPaymentConfiguration( Restaurant restaurant, User user){
+    final PaymentConfiguration getPaymentConfiguration( Restaurant restaurant, User user){
         def key = getKey(restaurant, user)
         return cache.get(key) as PaymentConfiguration
     }
