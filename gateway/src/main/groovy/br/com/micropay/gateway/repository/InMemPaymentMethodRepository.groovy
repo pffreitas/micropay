@@ -14,9 +14,9 @@ class InMemPaymentMethodRepository implements IPaymentMethodRepository{
         return [
                 new PaymentMethod(id: 1, description: "Cash", type: PaymentType.Cash),
                 new PaymentMethod(id: 2, description: "Rede POSMachine", type: PaymentType.POSMachine),
-                new PaymentMethod(id: 2, description: "Cielo POSMachine", type: PaymentType.POSMachine),
-                new PaymentMethod(id: 2, description: "Mastercard", type: PaymentType.Online),
-                new PaymentMethod(id: 2, description: "Visa", type: PaymentType.Online)
+                new PaymentMethod(id: 3, description: "Cielo POSMachine", type: PaymentType.POSMachine),
+                new PaymentMethod(id: 4, description: "Mastercard", type: PaymentType.Online),
+                new PaymentMethod(id: 5, description: "Visa", type: PaymentType.Online)
         ]
     }
 

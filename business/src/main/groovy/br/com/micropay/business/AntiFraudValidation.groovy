@@ -1,17 +1,20 @@
 package br.com.micropay.business
 
-import br.com.micropay.business.object.AntiFraudResponse
-import br.com.micropay.business.object.PaymentMethod
-import br.com.micropay.business.object.Restaurant
-import br.com.micropay.business.object.User
+import br.com.micropay.business.object.*
 
 import javax.inject.Named
 
 @Named
 class AntiFraudValidation {
 
-    AntiFraudResponse process(User user, Restaurant restaurant, PaymentMethod paymentMethod) {
-        return new AntiFraudResponse(denied: true)
+    static final AntiFraudResponse process(User user, Restaurant restaurant, PaymentMethod paymentMethod) {
+        def denied = false
+
+        if(user.id == 1L && paymentMethod.type == PaymentType.Online) {
+            denied = true
+        }
+
+        return new AntiFraudResponse(denied: denied)
     }
 
 }

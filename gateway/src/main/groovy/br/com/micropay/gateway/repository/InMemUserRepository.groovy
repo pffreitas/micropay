@@ -8,7 +8,10 @@ import javax.inject.Named
 @Named
 class InMemUserRepository implements IUserRepository{
 
-    Map<Long, User> data = [1L: new User(id: 1L, name: "U01")]
+    Map<Long, User> data = [
+            1L: new User(id: 1L, name: "U01"),
+            2L: new User(id: 2L, name: "Good Dinosaur")
+    ]
 
     @Override
     User findById(Long id) {

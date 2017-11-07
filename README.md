@@ -30,7 +30,7 @@ GET /micropay/api/restaurant/<id>/paymentMethods?userId=<id>
 
 In order to develop or simply run micropay, you gonna need:
 
- - Gradle 3.41
+ - Gradle 3.4.1
  - JDK 1.8
 
 ## Running
