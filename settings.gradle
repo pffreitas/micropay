@@ -1,0 +1,5 @@
+rootProject.name = 'micropay'
+include 'gateway'
+include 'domain'
+include 'business'
+
