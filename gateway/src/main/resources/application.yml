@@ -11,13 +11,3 @@ logging:
     org.springframework: INFO
     root: INFO
   file: /tmp/micropay.log
-rabbit:
-  user: reinf
-  password: reinf
-  host: 127.0.0.1
-  port: 5672
-  vhost: /
-  numberOfListeners: 1
-redis:
-  host-name: 127.0.0.1
-  port: 6379

@@ -2,7 +2,7 @@ allprojects {
     apply plugin: 'java'
     apply plugin: 'groovy'
 
-    group 'br.com.freitas'
+    group 'br.com.micropay'
     version '1.0-SNAPSHOT'
 
     sourceCompatibility = 1.8
